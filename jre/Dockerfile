@@ -9,7 +9,7 @@ ENV JAVA_VERSION_MAJOR=8 \
     JAVA_VERSION_BUILD=14
 
 RUN mkdir -p /usr/lib/jvm && \
-    curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie" -o /tmp/java.tar.gz \
+    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" -O /tmp/java.tar.gz \
       "http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}/jdk-${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-linux-arm32-vfp-hflt.tar.gz" && \
 
     # Extract
